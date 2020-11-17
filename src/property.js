@@ -207,7 +207,9 @@ function formatKeyframes(keyframes, options) {
 		finalValue = keyframes[totalKeyframes - 1];
 	}
 	beforeLastFinalValue = keyframes[totalKeyframes - 2];
-	finalValue.s = beforeLastFinalValue.h === 1 ? beforeLastFinalValue.s : beforeLastFinalValue.e;
+	if (finalValue.t === animationDurationInFrames) {
+		finalValue.s = beforeLastFinalValue.h === 1 ? beforeLastFinalValue.s : beforeLastFinalValue.e;
+	}
 	finalValue.e = finalValue.s;
 	if(hasMotionPath) {
 		resetMotionPath(finalValue);
