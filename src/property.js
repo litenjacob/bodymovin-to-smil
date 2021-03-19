@@ -383,7 +383,7 @@ function formatKeyframes(keyframes, options) {
  			key: 'from',
  			value: rgbHex(initialValue.s[0]*255, initialValue.s[1]*255, initialValue.s[2]*255)
  		})
- 		if(initialValue.h === 1) {
+		if(initialValue.h === 1 || !initialValue.e) {
 	 		attributes.push({
 	 			key: 'to',
 	 			value: rgbHex(initialValue.s[0]*255, initialValue.s[1]*255, initialValue.s[2]*255)
